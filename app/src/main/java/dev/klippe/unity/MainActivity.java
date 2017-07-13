@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import dev.klippe.unity.fragment.AddAdFragment;
+import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
 
@@ -101,10 +103,14 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_add_event) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AddEventFragment addEventFragment = AddEventFragment.getInstance(this);
+            ft.replace(R.id.main_frame, addEventFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_add_ad) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AddAdFragment addAdFragment = AddAdFragment.getInstance(this);
+            ft.replace(R.id.main_frame, addAdFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_feedback) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
