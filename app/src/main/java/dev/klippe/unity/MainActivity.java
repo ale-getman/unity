@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -78,7 +79,9 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
         if (id == R.id.btn_nav_mainpage) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            EventFragment eventFragment = EventFragment.getInstance(this);
+            ft.replace(R.id.main_frame, eventFragment);
+
 
         } else if (id == R.id.btn_nav_myshedule) {
             TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
