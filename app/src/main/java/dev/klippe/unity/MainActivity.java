@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.btn_nav_myshedule) {
             TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
             ft.replace(R.id.main_frame, timetableFragment);
-
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_ads) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
