@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,20 +78,40 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.btn_nav_mainpage) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.btn_nav_myshedule) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.btn_nav_ads) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.btn_nav_city_catalog) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.btn_nav_ibusnessman) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.btn_nav_search) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_add_event) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_add_ad) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_feedback) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_setting) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_about) {
+            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         }
 
