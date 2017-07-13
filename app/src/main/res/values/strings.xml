@@ -22,4 +22,7 @@
     <string name="nav_feedback">Обратная связь</string>
     <string name="nav_setting">Настройки</string>
     <string name="nav_about">О проекте</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
