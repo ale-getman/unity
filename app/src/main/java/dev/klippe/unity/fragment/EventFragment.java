@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ArrayAdapter;
 import android.widget.Checkable;
+
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,7 +31,7 @@ public class EventFragment extends Fragment  {
 
 
 
-    @BindView(R.id.listview)
+    public SingleSelectToggleGroup   single;
     public ListView listview;
     String[] names = { "Иван", "Марья", "Петр", "Антон", "Даша", "Борис",
             "Костя", "Игорь", "Анна", "Денис", "Андрей" };
@@ -37,27 +39,24 @@ public class EventFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
-        listview = ButterKnife.findById(view, R.id.listview);
-        SingleSelectToggleGroup   single = ButterKnife.findById(view, R.id.group_choices);
 
-
-
+        listview = (ListView) view.findViewById(R.id.listview2);
+      /* single = (SingleSelectToggleGroup) view.findViewById(R.id.group_choices);
         single.setOnCheckedChangeListener(new SingleSelectToggleGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(SingleSelectToggleGroup group, int checkedId) {
                 Toast.makeText(context, "asd", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
        // создаем адаптер
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_list_item_1, names);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
+                android.R.layout.simple_list_item_checked, names);
 
         // присваиваем адаптер списку
         listview.setAdapter(adapter);
 
-        return inflater.inflate(R.layout.fragment_event, container, false);
+        return view;
     }
 
     public static EventFragment getInstance(Context context) {
