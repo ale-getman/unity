@@ -77,15 +77,12 @@ public class MainActivity extends AppCompatActivity
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
-            ft.replace(R.id.main_frame, timetableFragment);
-        } else if (id == R.id.nav_slideshow) {
         if (id == R.id.btn_nav_mainpage) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.btn_nav_myshedule) {
+            TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
+            ft.replace(R.id.main_frame, timetableFragment);
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_ads) {
@@ -114,10 +111,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_nav_about) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_send) {
-            ft.commit();
         }
+        ft.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
