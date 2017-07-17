@@ -30,8 +30,6 @@ public class SwapScoreFragment extends Fragment {
     protected View view;
     private Context context;
 
-    @BindView(R.id.swapscore_img)
-    public ImageView swapscore_img;
 
     @BindView(R.id.swapscore_history_btn)
     public ImageButton swapscore_history_btn;
