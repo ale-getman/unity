@@ -18,6 +18,8 @@ import android.widget.Toast;
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.EventFragment;
+import dev.klippe.unity.fragment.QrScanFragment;
+import dev.klippe.unity.fragment.SwapScoreFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -110,6 +112,16 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.btn_nav_add_ad) {
             AddAdFragment addAdFragment = AddAdFragment.getInstance(this);
             ft.replace(R.id.main_frame, addAdFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_swap_score) {
+            SwapScoreFragment swapScoreFragment = SwapScoreFragment.getInstance(this);
+            ft.replace(R.id.main_frame, swapScoreFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_qr_code) {
+            QrScanFragment qrScanFragment = QrScanFragment.getInstance(this);
+            ft.replace(R.id.main_frame, qrScanFragment);
             Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_feedback) {

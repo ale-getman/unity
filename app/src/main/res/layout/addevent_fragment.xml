@@ -7,7 +7,7 @@
 
     <ImageButton
         android:id="@+id/addevent_add_btn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="116dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -55,7 +55,7 @@
 
     <EditText
         android:id="@+id/addevent_description_multitext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="87dp"
         android:hint="Описание здесь."
         android:inputType="textMultiLine"
@@ -66,7 +66,7 @@
 
     <EditText
         android:id="@+id/addevent_cost_edit"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Цена"
         app:layout_constraintHorizontal_bias="0.0"

@@ -36,4 +36,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.nex3z:toggle-button-group:1.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    compile 'com.github.nisrulz:qreader:2.0.0'
 }
