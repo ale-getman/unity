@@ -4,35 +4,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/btn_nav_mainpage"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_main"
             android:title="@string/nav_mainpage" />
         <item
             android:id="@+id/btn_nav_myshedule"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_timetable"
             android:title="@string/nav_myshedule" />
         <item
             android:id="@+id/btn_nav_ads"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_ad"
             android:title="@string/nav_ads" />
         <item
             android:id="@+id/btn_nav_city_catalog"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_catalog"
             android:title="@string/nav_city_catalog" />
         <item
             android:id="@+id/btn_nav_ibusnessman"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_profile"
             android:title="@string/nav_ibusnessman" />
         <item
             android:id="@+id/btn_nav_search"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_search"
             android:title="@string/nav_search" />
         <item
             android:id="@+id/btn_nav_add_event"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_add"
             android:title="@string/nav_add_event" />
         <item
             android:id="@+id/btn_nav_add_ad"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_add"
             android:title="@string/nav_add_ad" />
         <item
             android:id="@+id/btn_nav_swap_score"
@@ -44,15 +44,15 @@
             android:title="@string/nav_qr_code" />
         <item
             android:id="@+id/btn_nav_feedback"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_message"
             android:title="@string/nav_feedback" />
         <item
             android:id="@+id/btn_nav_setting"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_profile"
             android:title="@string/nav_setting" />
         <item
             android:id="@+id/btn_nav_about"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_about"
             android:title="@string/nav_about" />
     </group>
 
