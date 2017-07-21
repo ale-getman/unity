@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
+import dev.klippe.unity.adapter.EventAdapter;
 
 
 public class EventFragment extends Fragment  {
@@ -50,11 +51,16 @@ public class EventFragment extends Fragment  {
         });*/
 
        // создаем адаптер
+        ArrayList<String> s=new ArrayList<>();
+        s.add("VVVV");
+        s.add("VVVV");
+        s.add("VVVV");
+        EventAdapter eventAdapter = new EventAdapter(context,s);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
                 android.R.layout.simple_list_item_checked, names);
 
         // присваиваем адаптер списку
-        listview.setAdapter(adapter);
+        listview.setAdapter(eventAdapter);
 
         return view;
     }
