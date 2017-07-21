@@ -24,6 +24,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
+import dev.klippe.unity.utils.MaskImage;
 import io.mahendra.calendarview.widget.CalendarView;
 
 /**
@@ -68,17 +69,9 @@ public class SwapScoreFragment extends Fragment {
         ButterKnife.bind(context, view);
 
         swapscore_img = ButterKnife.findById(view, R.id.swapscore_img);
-        Bitmap original = BitmapFactory.decodeResource(getResources(),R.drawable.opacity);
-        Bitmap mask = BitmapFactory.decodeResource(getResources(),R.drawable.mask);
-        Bitmap result = Bitmap.createBitmap(mask.getWidth(), mask.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas mCanvas = new Canvas(result);
-        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        mCanvas.drawBitmap(original, 0, 0, null);
-        mCanvas.drawBitmap(mask, 0, 0, paint);
-        paint.setXfermode(null);
-        swapscore_img.setImageBitmap(result);
-        swapscore_img.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        MaskImage mi = new MaskImage(context);
+        swapscore_img.setImageBitmap(mi.getBitmap());
+        swapscore_img.setScaleType(ImageView.ScaleType.FIT_XY);
 
         return view;
     }

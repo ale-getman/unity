@@ -21,20 +21,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:paddingRight="10dp"
         android:layout_below="@+id/swapscore_img">
 
         <ImageButton
             android:id="@+id/swapscore_history_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@drawable/history" />
 
         <TextView
             android:id="@+id/swapscore_score_txt"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="800"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/btn_red"
             android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/swapscore_points_txt" />
+
+        <TextView
+            android:id="@+id/swapscore_points_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="баллов"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/swapscore_info_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Доступно для обмена"
+            android:layout_below="@+id/swapscore_score_txt"
             android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
@@ -45,6 +65,7 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/btn_style_2"
         android:text="Услуги партнеров через QR"
         android:textColor="@color/white_color" />
