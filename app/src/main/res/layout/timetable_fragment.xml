@@ -1,41 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/timetable_img"
-        android:src="@android:drawable/ic_menu_my_calendar"
-        android:background="@color/colorAccent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <io.mahendra.calendarview.widget.CalendarView
-        android:id="@+id/cal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@android:color/white"
-        app:calendarBackgroundColor="@android:color/transparent"
-        app:calendarTitleTextColor="@color/black_color"
-        app:currentDayOfMonthColor="@color/black_color"
-        app:dayOfWeekTextColor="@android:color/black"
-        app:disabledDayBackgroundColor="@android:color/transparent"
-        app:disabledDayTextColor="@color/disabletextcolor"
-        app:selectedDayBackgroundColor="@color/colorAccent"
-        app:titleLayoutBackgroundColor="@android:color/transparent"
-        app:weekLayoutBackgroundColor="@android:color/transparent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/timetable_list"
-        android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/timetable_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:src="@android:drawable/ic_menu_my_calendar" />
 
-</LinearLayout>
+        <!--<io.mahendra.calendarview.widget.CalendarView
+            android:id="@+id/cal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            app:calendarBackgroundColor="@android:color/transparent"
+            app:calendarTitleTextColor="@color/black_color"
+            app:currentDayOfMonthColor="@color/black_color"
+            app:dayOfWeekTextColor="@android:color/black"
+            app:disabledDayBackgroundColor="@android:color/transparent"
+            app:disabledDayTextColor="@color/disabletextcolor"
+            app:selectedDayBackgroundColor="@color/colorAccent"
+            app:titleLayoutBackgroundColor="@android:color/transparent"
+            app:weekLayoutBackgroundColor="@android:color/transparent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" >
+        </io.mahendra.calendarview.widget.CalendarView>-->
+
+        <CalendarView
+            android:id="@+id/cal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <ListView
+            android:id="@+id/timetable_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+</FrameLayout>

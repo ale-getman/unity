@@ -21,6 +21,8 @@
     <string name="nav_add_ad">Добавить объявление</string>
     <string name="nav_feedback">Обратная связь</string>
     <string name="nav_setting">Настройки</string>
+    <string name="nav_swap_score">Обмен баллов</string>
+    <string name="nav_qr_code">Считывание QR</string>
     <string name="nav_about">О проекте</string>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -24,125 +24,127 @@
             android:id="@+id/profile_image"
             android:layout_width="99dp"
             android:layout_height="97dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="134dp"
             android:src="@mipmap/ic_launcher"
             app:civ_border_color="#cccccc"
             app:civ_border_width="2dp"
-            tools:layout_constraintLeft_creator="1"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="134dp"
-            android:layout_marginLeft="8dp"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginRight="8dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.501" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1" />
+
         <TextView
             android:id="@+id/id_navbar_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
             android:text="880"
             android:textColor="@android:color/holo_orange_dark"
             android:textStyle="bold"
-            android:layout_marginTop="70dp"
             app:layout_constraintLeft_toRightOf="@+id/profile_image"
-            android:layout_marginLeft="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/id_persanal_hi"
-            android:layout_marginStart="16dp" />
+            app:layout_constraintTop_toBottomOf="@+id/id_persanal_hi" />
 
         <TextView
             android:id="@+id/text_coun_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/text_ballow"
             android:textColor="@android:color/darker_gray"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@+id/profile_image"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/id_navbar_count"
-            android:layout_marginStart="16dp" />
+            app:layout_constraintTop_toBottomOf="@+id/id_navbar_count" />
+
         <TextView
             android:id="@+id/id_persanal_hi"
             android:layout_width="236dp"
             android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="54dp"
             android:gravity="center_vertical|center_horizontal"
             android:text="Добрый день, Klippe!"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
-       <!-- <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
-            android:id="@+id/group_choices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:tbgCheckedButton="@+id/var2"
-            android:layout_marginTop="8dp"
-            android:foregroundGravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.057"
-            android:layout_marginRight="8dp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
+             android:id="@+id/group_choices"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:tbgCheckedButton="@+id/var2"
+             android:layout_marginTop="8dp"
+             android:foregroundGravity="center"
+             app:layout_constraintTop_toBottomOf="@+id/profile_image"
+             app:layout_constraintBottom_toBottomOf="parent"
+             android:layout_marginBottom="8dp"
+             app:layout_constraintVertical_bias="0.057"
+             android:layout_marginRight="8dp"
+             app:layout_constraintRight_toRightOf="parent"
+             android:layout_marginLeft="8dp"
+             app:layout_constraintLeft_toLeftOf="parent">
 
-            <TextView
-                android:id="@+id/var1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Мероприятия"/>
-            <TextView
-                android:id="@+id/var2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:text="Новости" />
+             <TextView
+                 android:id="@+id/var1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Мероприятия"/>
+             <TextView
+                 android:id="@+id/var2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" android:text="Новости" />
 
 
-        </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>-->
+         </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>-->
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="56dp"
             android:layout_height="55dp"
-            app:srcCompat="@drawable/ic_menu_send"
-            app:layout_constraintLeft_toRightOf="@+id/imageButton3"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+            app:layout_constraintHorizontal_bias="0.152"
+            app:layout_constraintLeft_toRightOf="@+id/imageButton3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            app:srcCompat="@drawable/ic_menu_send" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="56dp"
             android:layout_height="55dp"
-            app:srcCompat="@drawable/ic_menu_send"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            app:srcCompat="@drawable/ic_menu_send"
             tools:layout_editor_absoluteX="164dp" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="56dp"
             android:layout_height="55dp"
-            app:srcCompat="@drawable/ic_menu_send"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image"
-            app:layout_constraintRight_toLeftOf="@+id/imageButton3"
-            android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.858"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintHorizontal_bias="0.858" />
+            app:layout_constraintRight_toLeftOf="@+id/imageButton3"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            app:srcCompat="@drawable/ic_menu_send" />
 
         <ListView
             android:id="@+id/listview2"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="224dp"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="8dp"
@@ -159,30 +161,30 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="9dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+            android:text="TextView"
             app:layout_constraintLeft_toRightOf="@+id/textView3"
-            android:layout_marginLeft="20dp" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:layout_marginTop="9dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
             android:layout_marginLeft="85dp"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            android:layout_marginTop="9dp"
+            android:text="TextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintLeft_toRightOf="@+id/textView2"
             android:layout_marginLeft="19dp"
             android:layout_marginTop="9dp"
+            android:text="TextView"
+            app:layout_constraintLeft_toRightOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/imageButton" />
     </android.support.constraint.ConstraintLayout>
 

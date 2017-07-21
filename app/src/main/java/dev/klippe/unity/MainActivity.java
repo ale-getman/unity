@@ -1,11 +1,8 @@
 package dev.klippe.unity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,11 +12,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import dev.klippe.unity.fragment.AddAdFragment;
+import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.EventFragment;
+import dev.klippe.unity.fragment.QrScanFragment;
+import dev.klippe.unity.fragment.SwapScoreFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public FragmentTransaction ft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ft = getSupportFragmentManager().beginTransaction();
+        EventFragment eventFragment = EventFragment.getInstance(this);
+        ft.replace(R.id.main_frame, eventFragment);
+        ft.commit();
     }
 
     @Override
@@ -76,12 +84,11 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft = getSupportFragmentManager().beginTransaction();
 
         if (id == R.id.btn_nav_mainpage) {
             EventFragment eventFragment = EventFragment.getInstance(this);
             ft.replace(R.id.main_frame, eventFragment);
-
 
         } else if (id == R.id.btn_nav_myshedule) {
             TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
@@ -101,10 +108,24 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_add_event) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AddEventFragment addEventFragment = AddEventFragment.getInstance(this);
+            ft.replace(R.id.main_frame, addEventFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_add_ad) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AddAdFragment addAdFragment = AddAdFragment.getInstance(this);
+            ft.replace(R.id.main_frame, addAdFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_swap_score) {
+            SwapScoreFragment swapScoreFragment = SwapScoreFragment.getInstance(this);
+            ft.replace(R.id.main_frame, swapScoreFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_qr_code) {
+            QrScanFragment qrScanFragment = QrScanFragment.getInstance(this);
+            ft.replace(R.id.main_frame, qrScanFragment);
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_feedback) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();

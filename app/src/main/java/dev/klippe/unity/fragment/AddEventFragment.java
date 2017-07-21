@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -21,32 +20,32 @@ import dev.klippe.unity.R;
  * Created by user on 13.07.2017.
  */
 
-public class AddAdFragment extends Fragment {
+public class AddEventFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.addad_fragment;
+    private static final int LAYOUT = R.layout.addevent_fragment;
     protected View view;
     private Context context;
 
-    @BindView(R.id.addad_add_btn)
-    public ImageButton addad_add_btn;
-    @BindView(R.id.addad_title_edit)
-    public EditText addad_title_edit;
-    @BindView(R.id.addad_map_btn)
-    public Button addad_map_btn;
-    @BindView(R.id.addad_description_txt)
-    public TextView addad_description_txt;
-    @BindView(R.id.addad_description_multitext)
-    public EditText addad_description_multitext;
-    @BindView(R.id.addad_photo_grid)
-    public GridView addad_photo_grid;
-    @BindView(R.id.addad_cost_edit)
-    public EditText addad_cost_edit;
-    @BindView(R.id.addad_send_btn)
-    public Button addad_send_btn;
+    @BindView(R.id.addevent_add_btn)
+    public ImageButton addevent_add_btn;
+    @BindView(R.id.addevent_title_edit)
+    public EditText addevent_title_edit;
+    @BindView(R.id.addevent_map_btn)
+    public Button addevent_map_btn;
+    @BindView(R.id.addevent_date_btn)
+    public Button addevent_date_btn;
+    @BindView(R.id.addevent_description_txt)
+    public TextView addevent_description_txt;
+    @BindView(R.id.addevent_description_multitext)
+    public EditText addevent_description_multitext;
+    @BindView(R.id.addevent_cost_edit)
+    public EditText addevent_cost_edit;
+    @BindView(R.id.addevent_send_btn)
+    public Button addevent_send_btn;
 
-    public static AddAdFragment getInstance(Context context) {
+    public static AddEventFragment getInstance(Context context) {
         Bundle args = new Bundle();
-        AddAdFragment fragment = new AddAdFragment();
+        AddEventFragment fragment = new AddEventFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         return fragment;
