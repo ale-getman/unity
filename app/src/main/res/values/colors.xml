@@ -6,4 +6,7 @@
     <color name="white_color">#ffffff</color>
     <color name="disabletextcolor">#eeeeee</color>
     <color name="black_color">#000000</color>
+    <color name="trans_white">#97ffffff</color>
+    <color name="btn_red">#cf3c24</color>
+    <color name="btn_white_red">#e14c34</color>
 </resources>

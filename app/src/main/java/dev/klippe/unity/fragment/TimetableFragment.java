@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 import android.widget.ImageView;
 
 import java.util.Calendar;
@@ -18,7 +19,6 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
-import io.mahendra.calendarview.widget.CalendarView;
 
 /**
  * Created by user on 13.07.2017.
@@ -57,7 +57,7 @@ public class TimetableFragment extends Fragment {
         calendarView = ButterKnife.findById(view, R.id.cal);
 
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
-        calendarView.setIsOverflowDateVisible(true);
+        /*calendarView.setIsOverflowDateVisible(true);
         calendarView.setCurrentDay(new Date(System.currentTimeMillis()));
         calendarView.setBackButtonColor(R.color.colorAccent);
         calendarView.setNextButtonColor(R.color.colorAccent);
@@ -96,7 +96,7 @@ public class TimetableFragment extends Fragment {
                 // OnMonthTitleClick Action here
 
             }
-        });
+        });*/
         return view;
     }
 

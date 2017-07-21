@@ -1,11 +1,8 @@
 package dev.klippe.unity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,6 +22,8 @@ import dev.klippe.unity.fragment.TimetableFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public FragmentTransaction ft;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +39,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ft = getSupportFragmentManager().beginTransaction();
+        EventFragment eventFragment = EventFragment.getInstance(this);
+        ft.replace(R.id.main_frame, eventFragment);
+        ft.commit();
     }
 
     @Override
@@ -80,12 +84,11 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft = getSupportFragmentManager().beginTransaction();
 
         if (id == R.id.btn_nav_mainpage) {
             EventFragment eventFragment = EventFragment.getInstance(this);
             ft.replace(R.id.main_frame, eventFragment);
-
 
         } else if (id == R.id.btn_nav_myshedule) {
             TimetableFragment timetableFragment = TimetableFragment.getInstance(this);
