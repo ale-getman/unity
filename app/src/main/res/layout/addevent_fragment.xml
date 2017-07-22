@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,82 +7,77 @@
 
     <ImageButton
         android:id="@+id/addevent_add_btn"
-        android:layout_width="0dp"
-        android:layout_height="116dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/nav_add" />
 
     <EditText
         android:id="@+id/addevent_title_edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Заголовок"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_add_btn" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addevent_add_btn"
+        android:hint="Заголовок" />
 
     <Button
         android:id="@+id/addevent_map_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Местоположение"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_title_edit" />
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/addevent_title_edit"
+        android:layout_centerVertical="true"
+        android:background="@color/trans_white"
+        android:drawableLeft="@android:drawable/ic_dialog_map"
+        android:text="Местоположение" />
 
     <Button
         android:id="@+id/addevent_date_btn"
         android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/addevent_title_edit"
+        android:background="@color/trans_white"
+        android:drawableLeft="@drawable/calendar"
+        android:text="Дата" />
+
+    <EditText
+        android:id="@+id/addevent_cost_edit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Дата"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_map_btn" />
+        android:layout_below="@+id/addevent_map_btn"
+        android:hint="Цена" />
 
     <TextView
         android:id="@+id/addevent_description_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/addevent_cost_edit"
+        android:layout_centerHorizontal="true"
         android:text="Описание"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_date_btn" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/addevent_description_multitext"
-        android:layout_width="0dp"
-        android:layout_height="87dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/addevent_send_btn"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/addevent_description_txt"
+        android:gravity="start"
         android:hint="Описание здесь."
-        android:inputType="textMultiLine"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_description_txt" />
-
-    <EditText
-        android:id="@+id/addevent_cost_edit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Цена"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_description_multitext" />
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/addevent_send_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_style_2"
         android:text="Отправить"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addevent_cost_edit"
-        app:layout_constraintVertical_bias="0.129" />
+        android:textColor="@color/white_color" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

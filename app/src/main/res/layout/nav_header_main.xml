@@ -59,7 +59,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="7dp"
         android:text="880"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@color/btn_red"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/profile_image"
         app:layout_constraintTop_toBottomOf="@+id/id_navbar_name" />

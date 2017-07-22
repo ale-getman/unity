@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,78 +7,76 @@
 
     <ImageButton
         android:id="@+id/addad_add_btn"
-        android:layout_width="0dp"
-        android:layout_height="116dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/nav_add" />
 
     <EditText
         android:id="@+id/addad_title_edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Заголовок"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_photo_grid" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addad_add_btn"
+        android:hint="Заголовок" />
+
+    <GridView
+        android:id="@+id/addad_photo_grid"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addad_title_edit" />
 
     <Button
         android:id="@+id/addad_map_btn"
         android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addad_photo_grid"
+        android:background="@color/trans_white"
+        android:drawableLeft="@android:drawable/ic_dialog_map"
+        android:text="Местоположение" />
+
+    <EditText
+        android:id="@+id/addad_cost_edit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Местоположение"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_title_edit" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addad_map_btn"
+        android:hint="Цена" />
 
     <TextView
         android:id="@+id/addad_description_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/addad_cost_edit"
+        android:layout_centerHorizontal="true"
         android:text="Описание"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_map_btn" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/addad_description_multitext"
         android:layout_width="match_parent"
-        android:layout_height="87dp"
-        android:inputType="textMultiLine"
+        android:layout_height="90dp"
+        android:layout_above="@id/addad_send_btn"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addad_description_txt"
+        android:gravity="start"
         android:hint="Описание здесь."
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_description_txt" />
-
-    <GridView
-        android:id="@+id/addad_photo_grid"
-        android:layout_width="0dp"
-        android:layout_height="59dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_add_btn" />
-
-    <EditText
-        android:id="@+id/addad_cost_edit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Цена"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_description_multitext" />
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/addad_send_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_style_2"
         android:text="Отправить"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addad_cost_edit" />
+        android:textColor="@color/white_color" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
