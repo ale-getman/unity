@@ -56,17 +56,6 @@
         android:text="Описание"
         android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/addevent_description_multitext"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_above="@id/addevent_send_btn"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/addevent_description_txt"
-        android:gravity="start"
-        android:hint="Описание здесь."
-        android:inputType="textMultiLine" />
-
     <Button
         android:id="@+id/addevent_send_btn"
         android:layout_width="match_parent"
@@ -79,5 +68,16 @@
         android:background="@drawable/btn_style_2"
         android:text="Отправить"
         android:textColor="@color/white_color" />
+
+    <EditText
+        android:id="@+id/addevent_description_multitext"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/addevent_send_btn"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/addevent_description_txt"
+        android:gravity="start"
+        android:hint="Описание здесь."
+        android:inputType="textMultiLine" />
 
 </RelativeLayout>
