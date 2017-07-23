@@ -15,6 +15,7 @@ import android.widget.Toast;
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.EventFragment;
+import dev.klippe.unity.fragment.FeatbackFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
 import dev.klippe.unity.fragment.SearchFragment;
 import dev.klippe.unity.fragment.SwapScoreFragment;
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity
 
             SearchFragment searchFragment  = SearchFragment.getInstance(this);
             ft.replace(R.id.main_frame, searchFragment);
-            Toast.makeText(this, "Делаю", Toast.LENGTH_SHORT).show();
+
 
         } else if (id == R.id.btn_nav_add_event) {
             AddEventFragment addEventFragment = AddEventFragment.getInstance(this);
@@ -143,7 +144,9 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_feedback) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+            FeatbackFragment featbackFragment  = FeatbackFragment.getInstance(this);
+            ft.replace(R.id.main_frame, featbackFragment);
 
         } else if (id == R.id.btn_nav_setting) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
