@@ -1,0 +1,154 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.klippe.unity.fragment.EventFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ImageView
+        android:id="@+id/searchTopImage"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="-608dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="210dp"
+            android:background="@drawable/edittextstyle"
+            android:ems="10"
+            android:inputType="textPersonName"
+            />
+
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp">
+
+            <Button
+                android:id="@+id/search_option2"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="Для детей"
+                android:textColor="@color/white_color"
+                android:textSize="10sp"
+
+                />
+
+            <Button
+                android:id="@+id/search_option1"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="По моим интересам"
+                android:textColor="@color/white_color"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/linearLayout4">
+
+            <Button
+                android:id="@+id/search_option3"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="На выходные"
+                android:textColor="@color/white_color"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/search_option4"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="Кино"
+                android:textColor="@color/white_color"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout6"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp">
+
+            <Button
+                android:id="@+id/search_option5"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="Концерты"
+                android:textColor="@color/white_color"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/search_option6"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_style_2"
+                android:text="Все категории"
+                android:textColor="@color/white_color"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="71dp"
+            android:layout_marginEnd="17dp"
+            android:text="Что ищем?"
+            android:layout_alignBottom="@+id/editText"
+            android:layout_alignEnd="@+id/editText" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_below="@+id/editText"
+            android:layout_marginTop="6dp"
+            android:text="Безопасное" />
+
+    </RelativeLayout>
+
+</FrameLayout>

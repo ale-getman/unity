@@ -16,6 +16,7 @@ import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
+import dev.klippe.unity.fragment.SearchFragment;
 import dev.klippe.unity.fragment.SwapScoreFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
 
@@ -116,7 +117,10 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_search) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+            SearchFragment searchFragment  = SearchFragment.getInstance(this);
+            ft.replace(R.id.main_frame, searchFragment);
+            Toast.makeText(this, "Делаю", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_add_event) {
             AddEventFragment addEventFragment = AddEventFragment.getInstance(this);

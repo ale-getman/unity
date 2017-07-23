@@ -36,11 +36,11 @@
             android:title="@string/nav_add_ad" />
         <item
             android:id="@+id/btn_nav_swap_score"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_about"
             android:title="@string/nav_swap_score" />
         <item
             android:id="@+id/btn_nav_qr_code"
-            android:icon="@drawable/ic_menu_gallery"
+           android:icon="@drawable/nav_about"
             android:title="@string/nav_qr_code" />
         <item
             android:id="@+id/btn_nav_feedback"
