@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
+import dev.klippe.unity.fragment.CategoryFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
@@ -112,7 +113,10 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_city_catalog) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+            CategoryFragment categoryFragment  = CategoryFragment.getInstance(this);
+            ft.replace(R.id.main_frame, categoryFragment);
+
 
         } else if (id == R.id.btn_nav_ibusnessman) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
