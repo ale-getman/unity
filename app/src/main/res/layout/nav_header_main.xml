@@ -16,7 +16,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/img_event"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginLeft="32dp"
@@ -46,8 +46,8 @@
         android:textSize="20sp"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:layout_constraintLeft_toRightOf="@+id/img_event"
+        app:layout_constraintTop_toTopOf="@+id/img_event"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
         tools:layout_editor_absoluteX="134dp" />
@@ -61,7 +61,7 @@
         android:text="880"
         android:textColor="@color/btn_red"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/profile_image"
+        app:layout_constraintLeft_toRightOf="@+id/img_event"
         app:layout_constraintTop_toBottomOf="@+id/id_navbar_name" />
 
     <TextView
