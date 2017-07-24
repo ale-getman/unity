@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
+import dev.klippe.unity.fragment.AdsFragment;
 import dev.klippe.unity.fragment.CategoryFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         return result;
     }
 
-           @Override
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_ads) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AdsFragment adsFragment = AdsFragment.getInstance(this);
+            ft.replace(R.id.main_frame, adsFragment);
 
         } else if (id == R.id.btn_nav_city_catalog) {
 
