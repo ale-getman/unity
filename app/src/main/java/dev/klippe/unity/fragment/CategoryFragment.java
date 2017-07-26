@@ -7,9 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.widget.ArrayAdapter;
-
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -21,63 +18,60 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
 import dev.klippe.unity.adapter.CategoryAdapter;
-import dev.klippe.unity.adapter.EventAdapter;
 import dev.klippe.unity.entity.CityCategory;
-import dev.klippe.unity.entity.EventEntity;
 import dev.klippe.unity.utils.MaskImage;
 
 
-public class EventFragment extends Fragment  {
-    private static final int LAYOUT = R.layout.fragment_event;
+public class CategoryFragment extends Fragment  {
+    private static final int LAYOUT = R.layout.fragment_category;
     protected View view;
     private Context context;
-
-    @BindView(R.id.imageView)
-    public ImageView searchImage;
-
-    ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
-    EventAdapter boxAdapter;
 
 
 
     public SingleSelectToggleGroup   single;
     public ListView listview;
-    String[] names = { "Иван", "Марья", "Петр", "Антон", "Даша", "Борис",
-            "Костя", "Игорь", "Анна", "Денис", "Андрей" };
+    @BindView(R.id.searchTopImage)
+    public ImageView searchImage;
+
+    ArrayList<CityCategory> products = new ArrayList<CityCategory>();
+    CategoryAdapter boxAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
         ButterKnife.bind(context, view);
-        listview = (ListView) view.findViewById(R.id.listview2);
 
+        listview = (ListView) view.findViewById(R.id.lv_category);
 
-        searchImage = ButterKnife.findById(view, R.id.imageView);
+       ImageView searchImage = ButterKnife.findById(view, R.id.searchTopImage);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);
 
-
         // создаем адаптер
         fillData();
-        boxAdapter = new EventAdapter(context, eventAdap);
+        boxAdapter = new CategoryAdapter(context, products);
 
         // настраиваем список
 
         listview.setAdapter(boxAdapter);
+
+
 
         return view;
     }
 
     void fillData() {
         for (int i = 1; i <= 20; i++) {
-            eventAdap.add(new EventEntity("Product ","sdf","20.10.1195",R.drawable.avatar));
+            products.add(new CityCategory("Product ",R.drawable.avatar));
         }
     }
 
-    public static EventFragment getInstance(Context context) {
+    public static CategoryFragment getInstance(Context context) {
         Bundle args = new Bundle();
-        EventFragment fragment = new EventFragment();
+        CategoryFragment fragment = new CategoryFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         return fragment;

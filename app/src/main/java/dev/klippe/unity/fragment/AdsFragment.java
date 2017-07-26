@@ -7,65 +7,63 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ArrayAdapter;
-
 import android.widget.ImageView;
 import android.widget.ListView;
-
-import com.nex3z.togglebuttongroup.SingleSelectToggleGroup;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
-import dev.klippe.unity.adapter.CategoryAdapter;
 import dev.klippe.unity.adapter.EventAdapter;
-import dev.klippe.unity.entity.CityCategory;
 import dev.klippe.unity.entity.EventEntity;
 import dev.klippe.unity.utils.MaskImage;
 
 
-public class EventFragment extends Fragment  {
-    private static final int LAYOUT = R.layout.fragment_event;
+public class AdsFragment extends Fragment  {
+    private static final int LAYOUT = R.layout.fragment_ads;
     protected View view;
     private Context context;
 
-    @BindView(R.id.imageView)
+    @BindView(R.id.searchTopImage)
     public ImageView searchImage;
+
+
+    @BindView(R.id.lv_my_ads)
+    public ListView lv_my_ads;
+
+    @BindView(R.id.lv_other_ads)
+    public ListView lv_other_ads;
 
     ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
     EventAdapter boxAdapter;
+    String[] categories =new String[]{"1","2"};
 
-
-
-    public SingleSelectToggleGroup   single;
-    public ListView listview;
-    String[] names = { "Иван", "Марья", "Петр", "Антон", "Даша", "Борис",
-            "Костя", "Игорь", "Анна", "Денис", "Андрей" };
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
         ButterKnife.bind(context, view);
-        listview = (ListView) view.findViewById(R.id.listview2);
 
-
-        searchImage = ButterKnife.findById(view, R.id.imageView);
+        searchImage = ButterKnife.findById(view, R.id.searchTopImage);
+        lv_my_ads = ButterKnife.findById(view, R.id.lv_my_ads);
+        lv_other_ads = ButterKnife.findById(view, R.id.lv_other_ads);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);
 
 
-        // создаем адаптер
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
+                android.R.layout.simple_list_item_1, categories);
+
+        // присваиваем адаптер списку
+        lv_other_ads.setAdapter(adapter);
+
         fillData();
         boxAdapter = new EventAdapter(context, eventAdap);
-
-        // настраиваем список
-
-        listview.setAdapter(boxAdapter);
-
+        lv_my_ads.setAdapter(boxAdapter);
         return view;
     }
 
@@ -75,9 +73,10 @@ public class EventFragment extends Fragment  {
         }
     }
 
-    public static EventFragment getInstance(Context context) {
+
+    public static AdsFragment getInstance(Context context) {
         Bundle args = new Bundle();
-        EventFragment fragment = new EventFragment();
+        AdsFragment fragment = new AdsFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
         return fragment;

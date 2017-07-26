@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
+import dev.klippe.unity.fragment.AdsFragment;
+import dev.klippe.unity.fragment.CategoryFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
@@ -99,17 +101,21 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_ads) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            AdsFragment adsFragment = AdsFragment.getInstance(this);
+            ft.replace(R.id.main_frame, adsFragment);
 
         } else if (id == R.id.btn_nav_city_catalog) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+            CategoryFragment categoryFragment  = CategoryFragment.getInstance(this);
+            ft.replace(R.id.main_frame, categoryFragment);
+
 
         } else if (id == R.id.btn_nav_ibusnessman) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_search) {
 
-            SearchFragment searchFragment = SearchFragment.getInstance(this);
+            SearchFragment searchFragment  = SearchFragment.getInstance(this);
             ft.replace(R.id.main_frame, searchFragment);
 
 
@@ -135,7 +141,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_nav_feedback) {
 
-            FeatbackFragment featbackFragment = FeatbackFragment.getInstance(this);
+            FeatbackFragment featbackFragment  = FeatbackFragment.getInstance(this);
             ft.replace(R.id.main_frame, featbackFragment);
 
         } else if (id == R.id.btn_nav_setting) {

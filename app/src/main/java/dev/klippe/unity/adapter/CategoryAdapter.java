@@ -1,6 +1,7 @@
 package dev.klippe.unity.adapter;
 
 import android.content.Context;
+import android.icu.util.ULocale;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +13,19 @@ import java.util.ArrayList;
 
 import dev.klippe.unity.R;
 import dev.klippe.unity.entity.CityCategory;
-import dev.klippe.unity.entity.EventEntity;
 
 /**
  * Created by klippe on 23.07.2017.
  */
 
-public class EventAdapter extends BaseAdapter {
+public class CategoryAdapter extends BaseAdapter {
 
     Context ctx;
     LayoutInflater lInflater;
-    ArrayList<EventEntity> objects;
+    ArrayList<CityCategory> objects;
 
 
-    public EventAdapter(Context context, ArrayList<EventEntity> categories) {
+    public CategoryAdapter(Context context, ArrayList<CityCategory> categories) {
         ctx = context;
         objects = categories;
         lInflater = (LayoutInflater) ctx
@@ -54,25 +54,23 @@ public class EventAdapter extends BaseAdapter {
         // используем созданные, но не используемые view
         View view = convertView;
         if (view == null) {
-            view = lInflater.inflate(R.layout.item, parent, false);
+            view = lInflater.inflate(R.layout.item_catalog_listview, parent, false);
         }
 
-        EventEntity p = getCategory(position);
+        CityCategory p = getCategory(position);
 
         // заполняем View в пункте списка данными из товаров: наименование, цена
         // и картинка
-        ((TextView) view.findViewById(R.id.txt_name_event)).setText(p.nameEvent);
-        ((TextView) view.findViewById(R.id.txt_description_event)).setText(p.descriprionEvent);
-        ((TextView) view.findViewById(R.id.txt_date_event)).setText(p.dateEvent);
-        ((ImageView) view.findViewById(R.id.img_event)).setImageResource(p.imageEvent);
+        ((TextView) view.findViewById(R.id.txt_category)).setText(p.nameCategory);
+        ((ImageView) view.findViewById(R.id.im_category)).setImageResource(p.imageCategory);
 
 
         return view;
     }
 
     // товар по позиции
-    EventEntity getCategory(int position) {
-        return ((EventEntity) getItem(position));
+    CityCategory getCategory(int position) {
+        return ((CityCategory) getItem(position));
     }
 
 
