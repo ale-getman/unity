@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
         getSupportActionBar().setTitle("");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -50,16 +49,7 @@ public class MainActivity extends AppCompatActivity
         ft.commit();
     }
 
-    public int getStatusBarHeight() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        return result;
-    }
-
-           @Override
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -119,7 +109,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_nav_search) {
 
-            SearchFragment searchFragment  = SearchFragment.getInstance(this);
+            SearchFragment searchFragment = SearchFragment.getInstance(this);
             ft.replace(R.id.main_frame, searchFragment);
 
 
@@ -145,7 +135,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_nav_feedback) {
 
-            FeatbackFragment featbackFragment  = FeatbackFragment.getInstance(this);
+            FeatbackFragment featbackFragment = FeatbackFragment.getInstance(this);
             ft.replace(R.id.main_frame, featbackFragment);
 
         } else if (id == R.id.btn_nav_setting) {
