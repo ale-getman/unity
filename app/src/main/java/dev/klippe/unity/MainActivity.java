@@ -18,6 +18,7 @@ import dev.klippe.unity.fragment.AdsFragment;
 import dev.klippe.unity.fragment.CategoryFragment;
 import dev.klippe.unity.fragment.EventFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
+import dev.klippe.unity.fragment.ProfileFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
 import dev.klippe.unity.fragment.SearchFragment;
 import dev.klippe.unity.fragment.SwapScoreFragment;
@@ -111,7 +112,9 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.btn_nav_ibusnessman) {
-            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+            ProfileFragment profileFragment = ProfileFragment.getInstance(this);
+            ft.replace(R.id.main_frame, profileFragment);
+//            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_search) {
 

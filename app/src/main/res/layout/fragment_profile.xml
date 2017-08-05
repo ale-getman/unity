@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/profile_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_bar_circular"
+        android:rotation="45" />
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/calendar" />
+
+    <TextView
+        android:id="@+id/profile_greetings"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:background="#78ffffff"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Добрый день, Klippe!" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="#cccccc"
+        app:civ_border_width="2dp" />
+
+    <TextView
+        android:id="@+id/profile_exp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/profile_progress_bar"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="1280/1500" />
+
+    <TextView
+        android:id="@+id/profile_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_exp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="До уровня активного гражданина 3" />
+
+    <TextView
+        android:id="@+id/profile_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_info"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:text="Ваш ID в системе - 0000001" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/profile_btn_swap_points"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/profile_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Доступно для обмена 880" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:id="@+id/profile_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Учтено событий с участием 34" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:id="@+id/profile_used_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Баллов использовано 400" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/profile_btn_swap_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/profile_settings"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_style_2"
+        android:text="Обменять баллы"
+        android:textColor="@color/white_color" />
+
+    <TextView
+        android:id="@+id/profile_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:text="Настроить профиль интересов" />
+
+</RelativeLayout>

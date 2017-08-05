@@ -34,8 +34,7 @@
             android:layout_marginTop="210dp"
             android:background="@drawable/edittextstyle"
             android:ems="10"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
 
 
         <LinearLayout
@@ -43,13 +42,14 @@
             android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox2"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="5dp">
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
 
             <Button
                 android:id="@+id/search_option2"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -61,7 +61,7 @@
 
             <Button
                 android:id="@+id/search_option1"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -74,13 +74,14 @@
             android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_margin="5dp"
-            android:layout_below="@+id/linearLayout4">
+            android:layout_below="@+id/linearLayout4"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp">
 
             <Button
                 android:id="@+id/search_option3"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -90,7 +91,7 @@
 
             <Button
                 android:id="@+id/search_option4"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -98,19 +99,19 @@
                 android:textColor="@color/white_color"
                 android:textSize="10sp" />
 
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout6"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="5dp">
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp">
 
             <Button
                 android:id="@+id/search_option5"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -120,7 +121,7 @@
 
             <Button
                 android:id="@+id/search_option6"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
@@ -133,12 +134,11 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_alignBottom="@+id/editText"
+            android:layout_alignEnd="@+id/editText"
             android:layout_marginBottom="71dp"
             android:layout_marginEnd="17dp"
-            android:text="Что ищем?"
-            android:layout_alignBottom="@+id/editText"
-            android:layout_alignEnd="@+id/editText" />
+            android:text="Что ищем?" />
 
         <CheckBox
             android:id="@+id/checkBox2"
@@ -146,7 +146,6 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/editText"
             android:layout_below="@+id/editText"
-            android:layout_marginTop="6dp"
             android:text="Безопасное" />
 
     </RelativeLayout>

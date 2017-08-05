@@ -1,0 +1,113 @@
+package dev.klippe.unity.fragment;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
+import dev.klippe.unity.R;
+import dev.klippe.unity.utils.MaskImage;
+
+/**
+ * Created by user on 05.08.2017.
+ */
+
+public class ProfileFragment extends Fragment {
+
+    private static final int LAYOUT = R.layout.fragment_profile;
+    protected View view;
+    private Context context;
+
+    @BindView(R.id.profile_progress_bar)
+    public ProgressBar profileProgressBar;
+
+    @BindView(R.id.profile_img)
+    public ImageView profileImg;
+
+    @BindView(R.id.profile_greetings)
+    public TextView profileGreetings;
+
+    @BindView(R.id.profile_avatar)
+    public CircleImageView profileAvatar;
+
+    @BindView(R.id.profile_exp)
+    public TextView profileExp;
+
+    @BindView(R.id.profile_info)
+    public TextView profileInfo;
+
+    @BindView(R.id.profile_id)
+    public TextView profileId;
+
+    @BindView(R.id.profile_points)
+    public TextView profilePoints;
+
+    @BindView(R.id.profile_events)
+    public TextView profileEvents;
+
+    @BindView(R.id.profile_used_points)
+    public TextView profileUsedPoints;
+
+    @BindView(R.id.profile_btn_swap_points)
+    public Button profileBtnSwapPoints;
+
+    @BindView(R.id.profile_settings)
+    public TextView profileSettings;
+
+    public static ProfileFragment getInstance(Context context) {
+        Bundle args = new Bundle();
+        ProfileFragment fragment = new ProfileFragment();
+        fragment.setArguments(args);
+        fragment.setContext(context);
+        return fragment;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(LAYOUT, container, false);
+        ButterKnife.bind(context, view);
+
+        profileProgressBar = ButterKnife.findById(view, R.id.profile_progress_bar);
+        profileImg = ButterKnife.findById(view, R.id.profile_img);
+        profileGreetings = ButterKnife.findById(view, R.id.profile_greetings);
+        profileAvatar = ButterKnife.findById(view, R.id.profile_avatar);
+        profileExp = ButterKnife.findById(view, R.id.profile_exp);
+        profileInfo = ButterKnife.findById(view, R.id.profile_info);
+        profileId = ButterKnife.findById(view, R.id.profile_id);
+        profilePoints = ButterKnife.findById(view, R.id.profile_points);
+        profileEvents = ButterKnife.findById(view, R.id.profile_events);
+        profileUsedPoints = ButterKnife.findById(view, R.id.profile_used_points);
+        profileBtnSwapPoints = ButterKnife.findById(view, R.id.profile_btn_swap_points);
+        profileSettings = ButterKnife.findById(view, R.id.profile_settings);
+
+        profileProgressBar.setProgress(47);
+
+        MaskImage mi = new MaskImage(context);
+        profileImg.setImageBitmap(mi.getBitmap());
+        profileImg.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        String buf = "<font color='red'>1280/</font>1500";
+        profileExp.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+        buf = "До уровня <font color='red'>активный гражданин 3</font>";
+        profileInfo.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+
+        return view;
+    }
+}
