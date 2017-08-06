@@ -1,22 +1,25 @@
 package dev.klippe.unity.fragment;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dev.klippe.unity.MainActivity;
 import dev.klippe.unity.R;
-import github.nisrulz.qreader.QRDataListener;
-import github.nisrulz.qreader.QREader;
 
 /**
  * Created by user on 14.07.2017.
@@ -27,11 +30,13 @@ public class QrScanFragment extends Fragment {
     private static final int LAYOUT = R.layout.qrscan_fragment;
     protected View view;
     private Context context;
+    public String toast;
 
-    @BindView(R.id.camera_view)
-    public SurfaceView mySurfaceView;
+    @BindView(R.id.qrscan_info)
+    public TextView qrscanInfo;
 
-    public QREader qrEader;
+    @BindView(R.id.qrscan_start)
+    public Button qrscanStart;
 
     public static QrScanFragment getInstance(Context context) {
         Bundle args = new Bundle();
@@ -48,21 +53,16 @@ public class QrScanFragment extends Fragment {
         view = inflater.inflate(LAYOUT, container, false);
         ButterKnife.bind(context, view);
 
-        mySurfaceView = ButterKnife.findById(view ,R.id.camera_view);
+        qrscanInfo = ButterKnife.findById(view, R.id.qrscan_info);
+        qrscanStart = ButterKnife.findById(view, R.id.qrscan_start);
 
-        qrEader = new QREader.Builder(context, mySurfaceView, new QRDataListener() {
+        qrscanStart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDetected(final String data) {
-                Toast.makeText(context, data, Toast.LENGTH_SHORT).show();
-                Log.d("QREader", "Value : " + data);
+            public void onClick(View view) {
+                scanFromFragment();
             }
-        }).facing(QREader.BACK_CAM)
-                .enableAutofocus(true)
-                .height(mySurfaceView.getHeight())
-                .width(mySurfaceView.getWidth())
-                .build();
+        });
 
-        qrEader.start();
         return view;
     }
 
@@ -70,16 +70,33 @@ public class QrScanFragment extends Fragment {
         this.context = context;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        qrEader.initAndStart(mySurfaceView);
-        qrEader.start();
+    public void scanFromFragment() {
+        IntentIntegrator.forSupportFragment(this)
+                .setPrompt("")
+                .setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES)
+                .setOrientationLocked(false)
+                .initiateScan();
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        qrEader.releaseAndCleanup();
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                toast = "Cancelled from fragment";
+            } else {
+                toast = "Scanned from fragment: " + result.getContents();
+            }
+            // At this point we may or may not have a reference to the activity
+            displayToast();
+        }
+    }
+
+    private void displayToast() {
+        if (getActivity() != null && toast != null) {
+            Toast.makeText(getActivity(), toast, Toast.LENGTH_LONG).show();
+            qrscanInfo.setText(toast);
+            toast = null;
+        }
     }
 }
