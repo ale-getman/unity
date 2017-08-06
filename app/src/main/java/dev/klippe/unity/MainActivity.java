@@ -16,7 +16,7 @@ import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.AdsFragment;
 import dev.klippe.unity.fragment.CategoryFragment;
-import dev.klippe.unity.fragment.EventFragment;
+import dev.klippe.unity.fragment.MainFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
 import dev.klippe.unity.fragment.ProfileFragment;
 import dev.klippe.unity.fragment.QrScanFragment;
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ft = getSupportFragmentManager().beginTransaction();
-        EventFragment eventFragment = EventFragment.getInstance(this);
-        ft.replace(R.id.main_frame, eventFragment);
+        MainFragment mainFragment = MainFragment.getInstance(this);
+        ft.replace(R.id.main_frame, mainFragment);
         ft.commit();
     }
 
@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity
         ft = getSupportFragmentManager().beginTransaction();
 
         if (id == R.id.btn_nav_mainpage) {
-            EventFragment eventFragment = EventFragment.getInstance(this);
-            ft.replace(R.id.main_frame, eventFragment);
+            MainFragment mainFragment = MainFragment.getInstance(this);
+            ft.replace(R.id.main_frame, mainFragment);
 
         } else if (id == R.id.btn_nav_myshedule) {
             TimetableFragment timetableFragment = TimetableFragment.getInstance(this);

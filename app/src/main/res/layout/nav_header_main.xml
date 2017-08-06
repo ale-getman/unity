@@ -16,7 +16,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_event"
+        android:id="@+id/main_avatar"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginLeft="32dp"
@@ -46,14 +46,14 @@
         android:textSize="20sp"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/img_event"
-        app:layout_constraintTop_toTopOf="@+id/img_event"
+        app:layout_constraintLeft_toRightOf="@+id/main_avatar"
+        app:layout_constraintTop_toTopOf="@+id/main_avatar"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
         tools:layout_editor_absoluteX="134dp" />
 
     <TextView
-        android:id="@+id/id_navbar_count"
+        android:id="@+id/main_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -61,7 +61,7 @@
         android:text="880"
         android:textColor="@color/btn_red"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/img_event"
+        app:layout_constraintLeft_toRightOf="@+id/main_avatar"
         app:layout_constraintTop_toBottomOf="@+id/id_navbar_name" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:text="@string/text_ballow"
         android:textColor="@android:color/darker_gray"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/id_navbar_count"
+        app:layout_constraintLeft_toRightOf="@+id/main_points"
         app:layout_constraintTop_toBottomOf="@+id/id_navbar_name" />
 
 

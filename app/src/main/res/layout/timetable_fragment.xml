@@ -16,12 +16,11 @@
             android:layout_height="100dp"
             android:src="@android:drawable/ic_menu_my_calendar" />
 
-        <!--<io.mahendra.calendarview.widget.CalendarView
+        <io.mahendra.calendarview.widget.CalendarView
             android:id="@+id/cal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             app:calendarBackgroundColor="@android:color/transparent"
             app:calendarTitleTextColor="@color/black_color"
             app:currentDayOfMonthColor="@color/black_color"
@@ -30,12 +29,9 @@
             app:disabledDayTextColor="@color/disabletextcolor"
             app:selectedDayBackgroundColor="@color/colorAccent"
             app:titleLayoutBackgroundColor="@android:color/transparent"
-            app:weekLayoutBackgroundColor="@android:color/transparent"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" >
-        </io.mahendra.calendarview.widget.CalendarView>-->
+            app:weekLayoutBackgroundColor="@android:color/transparent"/>
 
-        <CalendarView
+        <!--<CalendarView
             android:id="@+id/cal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,12 +39,11 @@
             android:background="@android:color/white"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp" />
-
+-->
         <ListView
             android:id="@+id/timetable_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_height="150dp"/>
 
     </LinearLayout>
 

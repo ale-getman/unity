@@ -107,6 +107,12 @@ public class ProfileFragment extends Fragment {
         profileExp.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
         buf = "До уровня <font color='red'>активный гражданин 3</font>";
         profileInfo.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+        buf = "Доступно<br> для обмена<br> <h2><font color='red'>880</font></h2>";
+        profilePoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+        buf = "Учтено событий<br> с участием<br> <h2><font color='green'>34</font></h2>";
+        profileEvents.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+        buf = "Баллов<br> использовано<br> <h2><font color='grey'>400</font></h2>";
+        profileUsedPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
 
         return view;
     }

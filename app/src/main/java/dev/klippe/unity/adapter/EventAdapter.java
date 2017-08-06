@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import dev.klippe.unity.R;
-import dev.klippe.unity.entity.CityCategory;
 import dev.klippe.unity.entity.EventEntity;
 
 /**
@@ -64,7 +63,7 @@ public class EventAdapter extends BaseAdapter {
         ((TextView) view.findViewById(R.id.txt_name_event)).setText(p.nameEvent);
         ((TextView) view.findViewById(R.id.txt_description_event)).setText(p.descriprionEvent);
         ((TextView) view.findViewById(R.id.txt_date_event)).setText(p.dateEvent);
-        ((ImageView) view.findViewById(R.id.img_event)).setImageResource(p.imageEvent);
+        ((ImageView) view.findViewById(R.id.main_avatar)).setImageResource(p.imageEvent);
 
 
         return view;

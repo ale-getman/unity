@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_event"
+        android:id="@+id/main_avatar"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:src="@mipmap/ic_launcher"
@@ -33,7 +33,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginStart="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/img_event"
+        app:layout_constraintLeft_toRightOf="@+id/main_avatar"
         app:layout_constraintRight_toLeftOf="@+id/txt_date_event"
         app:layout_constraintTop_toTopOf="@+id/txt_date_event"
         app:srcCompat="@drawable/nav_ad"
@@ -58,7 +58,7 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/img_event"
+        app:layout_constraintLeft_toRightOf="@+id/main_avatar"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="16dp" />
 

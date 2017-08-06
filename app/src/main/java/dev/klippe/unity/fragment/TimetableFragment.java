@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 
 import java.util.Calendar;
@@ -20,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
 import dev.klippe.unity.utils.MaskImage;
+import io.mahendra.calendarview.widget.CalendarView;
 
 /**
  * Created by user on 13.07.2017.

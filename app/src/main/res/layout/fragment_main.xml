@@ -1,0 +1,113 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.klippe.unity.fragment.MainFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/main_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/calendar" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/main_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:src="@drawable/avatar"
+            app:civ_border_color="#cccccc"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/main_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/main_avatar"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:text="880 баллов"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/main_greetings"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="#78ffffff"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Добрый день, Klippe!" />
+
+        <ListView
+            android:id="@+id/main_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout5"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/main_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_avatar"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Мероприятия | Новости" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/main_switch"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/main_near"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/favorite"
+                android:gravity="center"
+                android:text="Рекомендации"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/main_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/history"
+                android:gravity="center"
+                android:text="Ближайшие"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/main_onmap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/onmap"
+                android:gravity="center"
+                android:text="На карте"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
