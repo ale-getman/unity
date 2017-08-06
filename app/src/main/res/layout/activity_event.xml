@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/event_img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="matrix"
+        android:src="@drawable/main_bg" />
+
+    <TextView
+        android:id="@+id/event_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/event_date"
+        android:layout_alignBottom="@+id/event_date"
+        android:layout_alignParentStart="true"
+        android:drawableLeft="@drawable/onmap"
+        android:gravity="center"
+        android:text="улица Артема, 74, Донецк"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/event_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/event_img"
+        android:drawableLeft="@drawable/onmap"
+        android:gravity="center"
+        android:text="10 января 2017 | 12:00"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/event_create_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/event_address"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/btn_style_2"
+        android:text="Создать напоминание"
+        android:textColor="@color/white_color"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/event_create_notif"
+        android:layout_marginTop="5dp"
+        android:background="@color/transparent" />
+
+    <TextView
+        android:id="@+id/event_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="Test" />
+
+</RelativeLayout>
