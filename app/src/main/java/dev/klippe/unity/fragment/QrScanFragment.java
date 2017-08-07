@@ -51,10 +51,7 @@ public class QrScanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
-
-        qrscanInfo = ButterKnife.findById(view, R.id.qrscan_info);
-        qrscanStart = ButterKnife.findById(view, R.id.qrscan_start);
+        ButterKnife.bind(this, view);
 
         qrscanStart.setOnClickListener(new View.OnClickListener() {
             @Override

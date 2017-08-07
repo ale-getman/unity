@@ -82,20 +82,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
-
-        profileProgressBar = ButterKnife.findById(view, R.id.profile_progress_bar);
-        profileImg = ButterKnife.findById(view, R.id.profile_img);
-        profileGreetings = ButterKnife.findById(view, R.id.profile_greetings);
-        profileAvatar = ButterKnife.findById(view, R.id.profile_avatar);
-        profileExp = ButterKnife.findById(view, R.id.profile_exp);
-        profileInfo = ButterKnife.findById(view, R.id.profile_info);
-        profileId = ButterKnife.findById(view, R.id.profile_id);
-        profilePoints = ButterKnife.findById(view, R.id.profile_points);
-        profileEvents = ButterKnife.findById(view, R.id.profile_events);
-        profileUsedPoints = ButterKnife.findById(view, R.id.profile_used_points);
-        profileBtnSwapPoints = ButterKnife.findById(view, R.id.profile_btn_swap_points);
-        profileSettings = ButterKnife.findById(view, R.id.profile_settings);
+        ButterKnife.bind(this, view);
 
         profileProgressBar.setProgress(47);
 

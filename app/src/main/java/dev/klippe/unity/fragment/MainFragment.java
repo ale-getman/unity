@@ -48,6 +48,9 @@ public class MainFragment extends Fragment {
     @BindView(R.id.main_onmap)
     public TextView mainOnmap;
 
+    @BindView(R.id.main_list)
+    public ListView listView;
+
     ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
     EventAdapter boxAdapter;
 
@@ -55,7 +58,6 @@ public class MainFragment extends Fragment {
     public String buf;
 
     public SingleSelectToggleGroup single;
-    public ListView listview;
     String[] names = {"Иван", "Марья", "Петр", "Антон", "Даша", "Борис",
             "Костя", "Игорь", "Анна", "Денис", "Андрей"};
 
@@ -63,16 +65,8 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
-        listview = (ListView) view.findViewById(R.id.main_list);
+        ButterKnife.bind(this, view);
 
-        mainPoints = ButterKnife.findById(view, R.id.main_points);
-        mainSwitch = ButterKnife.findById(view, R.id.main_switch);
-        mainNear = ButterKnife.findById(view, R.id.main_near);
-        mainRec = ButterKnife.findById(view, R.id.main_rec);
-        mainOnmap = ButterKnife.findById(view, R.id.main_onmap);
-
-        searchImage = ButterKnife.findById(view, R.id.main_img);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -82,7 +76,7 @@ public class MainFragment extends Fragment {
         boxAdapter = new EventAdapter(context, eventAdap);
 
         // настраиваем список
-        listview.setAdapter(boxAdapter);
+        listView.setAdapter(boxAdapter);
 
         buf = "<font color='red'>880</font><br>БАЛЛОВ";
         mainPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);

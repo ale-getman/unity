@@ -56,7 +56,7 @@ public class AddEventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
+        ButterKnife.bind(this, view);
 
         return view;
     }

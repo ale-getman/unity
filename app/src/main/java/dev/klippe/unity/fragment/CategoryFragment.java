@@ -22,15 +22,16 @@ import dev.klippe.unity.entity.CityCategory;
 import dev.klippe.unity.utils.MaskImage;
 
 
-public class CategoryFragment extends Fragment  {
+public class CategoryFragment extends Fragment {
     private static final int LAYOUT = R.layout.fragment_category;
     protected View view;
     private Context context;
 
+    public SingleSelectToggleGroup single;
 
-
-    public SingleSelectToggleGroup   single;
+    @BindView(R.id.lv_category)
     public ListView listview;
+
     @BindView(R.id.searchTopImage)
     public ImageView searchImage;
 
@@ -41,11 +42,8 @@ public class CategoryFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
+        ButterKnife.bind(this, view);
 
-        listview = (ListView) view.findViewById(R.id.lv_category);
-
-       ImageView searchImage = ButterKnife.findById(view, R.id.searchTopImage);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -59,13 +57,12 @@ public class CategoryFragment extends Fragment  {
         listview.setAdapter(boxAdapter);
 
 
-
         return view;
     }
 
     void fillData() {
         for (int i = 1; i <= 20; i++) {
-            products.add(new CityCategory("Product ",R.drawable.avatar));
+            products.add(new CityCategory("Product ", R.drawable.avatar));
         }
     }
 

@@ -15,7 +15,7 @@ import dev.klippe.unity.R;
 import dev.klippe.unity.utils.MaskImage;
 
 
-public class FeatbackFragment extends Fragment  {
+public class FeatbackFragment extends Fragment {
     private static final int LAYOUT = R.layout.fragment_featback;
     protected View view;
     private Context context;
@@ -23,15 +23,12 @@ public class FeatbackFragment extends Fragment  {
     @BindView(R.id.searchTopImage)
     public ImageView searchImage;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
+        ButterKnife.bind(this, view);
 
-        searchImage = ButterKnife.findById(view, R.id.searchTopImage);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);

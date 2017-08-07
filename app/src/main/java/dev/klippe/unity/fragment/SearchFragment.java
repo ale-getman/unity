@@ -29,9 +29,8 @@ public class SearchFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
+        ButterKnife.bind(this, view);
 
-        searchImage = ButterKnife.findById(view, R.id.searchTopImage);
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);

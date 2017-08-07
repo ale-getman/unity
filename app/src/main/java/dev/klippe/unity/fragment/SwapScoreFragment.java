@@ -66,9 +66,8 @@ public class SwapScoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(LAYOUT, container, false);
-        ButterKnife.bind(context, view);
+        ButterKnife.bind(this, view);
 
-        swapscore_img = ButterKnife.findById(view, R.id.swapscore_img);
         MaskImage mi = new MaskImage(context);
         swapscore_img.setImageBitmap(mi.getBitmap());
         swapscore_img.setScaleType(ImageView.ScaleType.FIT_XY);
