@@ -2,29 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ProgressBar
-        android:id="@+id/profile_progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progressDrawable="@drawable/progress_bar_circular"
-        android:rotation="45" />
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/profile_img"
+        android:id="@+id/business_img"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/calendar" />
 
     <TextView
-        android:id="@+id/profile_greetings"
+        android:id="@+id/business_greetings"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
@@ -33,7 +20,7 @@
         android:text="Добрый день, Klippe!" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_avatar"
+        android:id="@+id/business_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -43,51 +30,82 @@
         app:civ_border_width="2dp" />
 
     <TextView
-        android:id="@+id/profile_exp"
+        android:id="@+id/business_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/profile_progress_bar"
+        android:layout_below="@id/business_avatar"
         android:gravity="center"
-        android:textSize="24sp"
-        android:text="1280/1500" />
+        android:text="ЗАО MINIMARKET"
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/profile_info"
+        android:id="@+id/business_inn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/profile_exp"
+        android:layout_below="@id/business_name"
         android:gravity="center"
-        android:textSize="14sp"
-        android:text="До уровня активного гражданина 3" />
+        android:text="ИНН 000000001"
+        android:textSize="10sp" />
 
     <TextView
-        android:id="@+id/profile_id"
+        android:id="@+id/business_info1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/profile_info"
+        android:layout_below="@id/business_inn"
         android:gravity="center"
-        android:textSize="10sp"
-        android:text="Ваш ID в системе - 0000001" />
+        android:text="Юр. адрес: г. Донецк. ул..Дзержинского"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/business_info2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/business_info1"
+        android:gravity="center"
+        android:text="Телефон: 123 12 12 E-mail: info@market.ru Сайт: minimarket.ru"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/business_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/business_info2"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Вид деятельности: Продукты питания/Напитки"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/business_info3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/business_activities"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Сейчас для вашего бизнеса необходимо"
+        android:textSize="14sp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout8"
+        android:id="@+id/business_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/profile_btn_swap_points"
+        android:layout_above="@+id/business_settings"
+        android:layout_below="@+id/business_sell"
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
         <TextView
-            android:id="@+id/profile_points"
+            android:id="@+id/business_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="Доступно для обмена 880" />
 
         <View
@@ -96,13 +114,13 @@
             android:background="@color/transparent" />
 
         <TextView
-            android:id="@+id/profile_events"
+            android:id="@+id/business_events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="Учтено событий с участием 34" />
 
         <View
@@ -111,38 +129,49 @@
             android:background="@color/transparent" />
 
         <TextView
-            android:id="@+id/profile_used_points"
+            android:id="@+id/business_used_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="Баллов использовано 400" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/profile_btn_swap_points"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/profile_settings"
+        android:id="@+id/business_sell"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_below="@+id/business_info3"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/btn_style_2"
-        android:text="Обменять баллы"
+        android:text="Продать"
+        android:textColor="@color/white_color" />
+
+    <Button
+        android:id="@+id/business_buy"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/business_info3"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_style_2"
+        android:text="Купить"
         android:textColor="@color/white_color" />
 
     <TextView
-        android:id="@+id/profile_settings"
+        android:id="@+id/business_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_margin="10dp"
-        android:textSize="12sp"
         android:gravity="center"
-        android:text="Настроить профиль интересов" />
+        android:text="Настроить профиль интересов"
+        android:textSize="12sp" />
+
 
 </RelativeLayout>

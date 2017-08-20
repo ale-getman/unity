@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
+import dev.klippe.unity.adapter.EventAdapter;
+import dev.klippe.unity.entity.EventEntity;
 import dev.klippe.unity.utils.MaskImage;
 import io.mahendra.calendarview.widget.CalendarView;
 
@@ -37,6 +40,10 @@ public class TimetableFragment extends Fragment {
     @BindView(R.id.timetable_list)
     public ListView timetable_list;
 
+    ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
+    EventAdapter boxAdapter;
+
+
     public static TimetableFragment getInstance(Context context) {
         Bundle args = new Bundle();
         TimetableFragment fragment = new TimetableFragment();
@@ -57,7 +64,21 @@ public class TimetableFragment extends Fragment {
         timetableImg.setScaleType(ImageView.ScaleType.FIT_XY);
 
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
+
+        // создаем адаптер
+        fillData();
+        boxAdapter = new EventAdapter(context, eventAdap);
+
+        // настраиваем список
+        timetable_list.setAdapter(boxAdapter);
+
         return view;
+    }
+
+    void fillData() {
+        for (int i = 1; i <= 20; i++) {
+            eventAdap.add(new EventEntity("Product ", "sdf", "20.10.1195", R.drawable.avatar));
+        }
     }
 
     public void setContext(Context context) {

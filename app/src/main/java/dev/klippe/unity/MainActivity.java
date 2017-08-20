@@ -15,6 +15,7 @@ import android.widget.Toast;
 import dev.klippe.unity.fragment.AddAdFragment;
 import dev.klippe.unity.fragment.AddEventFragment;
 import dev.klippe.unity.fragment.AdsFragment;
+import dev.klippe.unity.fragment.BusinessmanFragment;
 import dev.klippe.unity.fragment.CategoryFragment;
 import dev.klippe.unity.fragment.MainFragment;
 import dev.klippe.unity.fragment.FeatbackFragment;
@@ -112,9 +113,13 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.btn_nav_ibusnessman) {
+            BusinessmanFragment businessmanFragment = BusinessmanFragment.getInstance(this);
+            ft.replace(R.id.main_frame, businessmanFragment);
+//            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btn_nav_profile) {
             ProfileFragment profileFragment = ProfileFragment.getInstance(this);
             ft.replace(R.id.main_frame, profileFragment);
-//            Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btn_nav_search) {
 

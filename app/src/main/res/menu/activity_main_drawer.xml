@@ -23,6 +23,10 @@
             android:icon="@drawable/nav_profile"
             android:title="@string/nav_ibusnessman" />
         <item
+            android:id="@+id/btn_nav_profile"
+            android:icon="@drawable/nav_profile"
+            android:title="@string/nav_profile" />
+        <item
             android:id="@+id/btn_nav_search"
             android:icon="@drawable/nav_search"
             android:title="@string/nav_search" />

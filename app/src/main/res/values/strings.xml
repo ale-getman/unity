@@ -24,6 +24,7 @@
     <string name="nav_swap_score">Обмен баллов</string>
     <string name="nav_qr_code">Считывание QR</string>
     <string name="nav_about">О проекте</string>
+    <string name="nav_profile">Мой профиль</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

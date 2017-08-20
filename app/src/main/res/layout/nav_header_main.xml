@@ -43,8 +43,8 @@
 
         android:text="Klippe"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
         android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/main_avatar"
         app:layout_constraintTop_toTopOf="@+id/main_avatar"
