@@ -31,6 +31,7 @@ public class EventAdapter extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+
     @Override
     public int getCount() {
         return objects.size();
@@ -38,6 +39,8 @@ public class EventAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
+
+
         return objects.get(position);
     }
 
@@ -68,6 +71,8 @@ public class EventAdapter extends BaseAdapter {
 
         return view;
     }
+
+
 
     // товар по позиции
     EventEntity getCategory(int position) {

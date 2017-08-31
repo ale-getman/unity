@@ -1,6 +1,7 @@
 package dev.klippe.unity.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nex3z.togglebuttongroup.SingleSelectToggleGroup;
 
@@ -19,6 +22,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dev.klippe.unity.AuthActivity;
+import dev.klippe.unity.EventActivity;
+import dev.klippe.unity.MainActivity;
 import dev.klippe.unity.R;
 import dev.klippe.unity.adapter.EventAdapter;
 import dev.klippe.unity.entity.EventEntity;
@@ -77,6 +83,15 @@ public class MainFragment extends Fragment {
 
         // настраиваем список
         listView.setAdapter(boxAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = new Intent(getActivity(), EventActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         buf = "<font color='red'>880</font><br>БАЛЛОВ";
         mainPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
