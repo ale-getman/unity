@@ -7,11 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
+import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +20,6 @@ import dev.klippe.unity.R;
 import dev.klippe.unity.adapter.EventAdapter;
 import dev.klippe.unity.entity.EventEntity;
 import dev.klippe.unity.utils.MaskImage;
-import io.mahendra.calendarview.widget.CalendarView;
 
 /**
  * Created by user on 13.07.2017.
@@ -31,14 +31,17 @@ public class TimetableFragment extends Fragment {
     protected View view;
     private Context context;
 
-    @BindView(R.id.cal)
-    public CalendarView calendarView;
+//    @BindView(R.id.cal)
+//    public CalendarView calendarView;
 
     @BindView(R.id.timetable_img)
     public ImageView timetableImg;
 
     @BindView(R.id.timetable_list)
     public ListView timetable_list;
+
+    @BindView(R.id.calendar)
+    public CalendarView calendar;
 
     ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
     EventAdapter boxAdapter;
@@ -63,7 +66,7 @@ public class TimetableFragment extends Fragment {
         timetableImg.setImageBitmap(mi.getBitmap());
         timetableImg.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        calendarView.setFirstDayOfWeek(Calendar.MONDAY);
+//        calendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
         // создаем адаптер
         fillData();
@@ -71,6 +74,7 @@ public class TimetableFragment extends Fragment {
 
         // настраиваем список
         timetable_list.setAdapter(boxAdapter);
+        initializeCalendar();
 
         return view;
     }
@@ -83,5 +87,25 @@ public class TimetableFragment extends Fragment {
 
     public void setContext(Context context) {
         this.context = context;
+    }
+
+    public void initializeCalendar() {
+//        calendar = (CalendarView) findViewById(R.id.calendar);
+
+        // sets whether to show the week number.
+        calendar.setShowWeekNumber(false);
+
+        // sets the first day of week according to Calendar.
+        // here we set Monday as the first day of the Calendar
+        calendar.setFirstDayOfWeek(2);
+
+        //sets the listener to be notified upon selected date change.
+        calendar.setOnDateChangeListener(new OnDateChangeListener() {
+            //show the selected date as a toast
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
+
+            }
+        });
     }
 }

@@ -93,8 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/business_settings"
         android:layout_below="@+id/business_sell"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
@@ -144,25 +144,23 @@
         android:id="@+id/business_sell"
         android:layout_width="120dp"
         android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/business_info3"
         android:layout_marginLeft="20dp"
         android:background="@drawable/btn_style_2"
         android:text="Продать"
-        android:textColor="@color/white_color"
-        android:layout_marginStart="50dp"
-        android:layout_alignStart="@+id/business_settings"
-        android:layout_below="@+id/business_info3" />
+        android:textColor="@color/white_color" />
 
     <Button
         android:id="@+id/business_buy"
         android:layout_width="120dp"
         android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/business_info3"
         android:layout_marginRight="20dp"
         android:background="@drawable/btn_style_2"
         android:text="Купить"
-        android:textColor="@color/white_color"
-        android:layout_below="@+id/business_info3"
-        android:layout_toEndOf="@+id/business_sell"
-        android:layout_marginStart="31dp" />
+        android:textColor="@color/white_color" />
 
     <TextView
         android:id="@+id/business_settings"

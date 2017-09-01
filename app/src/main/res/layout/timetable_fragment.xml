@@ -16,8 +16,16 @@
             android:layout_height="100dp"
             android:src="@android:drawable/ic_menu_my_calendar" />
 
+        <CalendarView
+            android:id="@+id/calendar"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+            android:dateTextAppearance="@style/CalenderViewDateCustomText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <io.mahendra.calendarview.widget.CalendarView
             android:id="@+id/cal"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
