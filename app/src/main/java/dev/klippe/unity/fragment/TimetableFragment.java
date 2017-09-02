@@ -27,7 +27,7 @@ import dev.klippe.unity.utils.MaskImage;
 
 public class TimetableFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.timetable_fragment;
+    private static final int LAYOUT = R.layout.fragment_timetable;
     protected View view;
     private Context context;
 

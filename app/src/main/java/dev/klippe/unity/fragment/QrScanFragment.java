@@ -1,6 +1,5 @@
 package dev.klippe.unity.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import com.google.zxing.integration.android.IntentResult;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dev.klippe.unity.MainActivity;
 import dev.klippe.unity.R;
 
 /**
@@ -27,7 +25,7 @@ import dev.klippe.unity.R;
 
 public class QrScanFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.qrscan_fragment;
+    private static final int LAYOUT = R.layout.fragment_qrscan;
     protected View view;
     private Context context;
     public String toast;

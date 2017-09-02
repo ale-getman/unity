@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +23,14 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 import dev.klippe.unity.AuthActivity;
 import dev.klippe.unity.EventActivity;
 import dev.klippe.unity.MainActivity;
 import dev.klippe.unity.R;
 import dev.klippe.unity.adapter.EventAdapter;
 import dev.klippe.unity.entity.EventEntity;
+import dev.klippe.unity.utils.DialogCustom;
 import dev.klippe.unity.utils.MaskImage;
 
 
@@ -35,6 +38,12 @@ public class MainFragment extends Fragment {
     private static final int LAYOUT = R.layout.fragment_main;
     protected View view;
     private Context context;
+
+    @BindView(R.id.main_greetings)
+    public TextView mainGreetings;
+
+    @BindView(R.id.main_avatar)
+    public CircleImageView mainAvatar;
 
     @BindView(R.id.main_img)
     public ImageView searchImage;
@@ -93,13 +102,32 @@ public class MainFragment extends Fragment {
             }
         });
 
+        mainGreetings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogCustom dc = new DialogCustom();
+                dc.showDialog(context, "Test test test test test test test Test test test test test test test Test test test test test test test");
+            }
+        });
+
+        mainAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft ;
+                ft = getFragmentManager().beginTransaction();
+                ProfileFragment profileFragment = ProfileFragment.getInstance(context);
+                ft.replace(R.id.main_frame, profileFragment);
+                ft.commit();
+            }
+        });
+
         buf = "<font color='red'>880</font><br>БАЛЛОВ";
         mainPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
         buf = "<font color='red'> Мероприятия </font> | Новости";
         switcher = true;
-        mainSwitch.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+//        mainSwitch.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
 
-        mainSwitch.setOnClickListener(new View.OnClickListener() {
+        /*mainSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (switcher) {
@@ -118,7 +146,7 @@ public class MainFragment extends Fragment {
                     switcher = true;
                 }
             }
-        });
+        });*/
 
         return view;
     }

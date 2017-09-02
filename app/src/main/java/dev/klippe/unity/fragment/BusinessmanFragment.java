@@ -4,13 +4,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -110,7 +110,28 @@ public class BusinessmanFragment extends Fragment {
         buf = "Баллов<br> использовано<br> <h2><font color='grey'>400</font></h2>";
         businessUsedPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
 
-        
+        businessBtnSell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft;
+                ft = getFragmentManager().beginTransaction();
+                AddAdFragment addAdFragment = AddAdFragment.getInstance(context);
+                ft.replace(R.id.main_frame, addAdFragment);
+                ft.commit();
+            }
+        });
+
+        businessBtnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft;
+                ft = getFragmentManager().beginTransaction();
+                SearchFragment searchFragment = SearchFragment.getInstance(context);
+                ft.replace(R.id.main_frame, searchFragment);
+                ft.commit();
+            }
+        });
+
         return view;
     }
 }

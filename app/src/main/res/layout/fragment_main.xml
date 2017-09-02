@@ -46,7 +46,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
-            android:background="#78ffffff"
+            android:background="#1cffffff"
             android:gravity="center_vertical|center_horizontal"
             android:text="Добрый день, Klippe!" />
 
@@ -66,7 +66,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Мероприятия | Новости" />
+            android:text="Мероприятия" />
 
         <LinearLayout
             android:id="@+id/linearLayout5"

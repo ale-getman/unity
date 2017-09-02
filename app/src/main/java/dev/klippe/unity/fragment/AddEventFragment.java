@@ -22,7 +22,7 @@ import dev.klippe.unity.R;
 
 public class AddEventFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.addevent_fragment;
+    private static final int LAYOUT = R.layout.fragment_addevent;
     protected View view;
     private Context context;
 

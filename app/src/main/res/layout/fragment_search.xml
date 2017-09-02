@@ -45,13 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkBox2"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:gravity="center">
 
             <Button
                 android:id="@+id/search_option2"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="Для детей"
@@ -64,6 +65,8 @@
                 android:id="@+id/search_option1"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="По моим интересам"
@@ -76,14 +79,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout4"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/search_option3"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="На выходные"
@@ -94,6 +98,8 @@
                 android:id="@+id/search_option4"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="Кино"
@@ -106,14 +112,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout6"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/search_option5"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="Концерты"
@@ -124,6 +131,8 @@
                 android:id="@+id/search_option6"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_style_2"
                 android:text="Все категории"

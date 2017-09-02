@@ -1,12 +1,6 @@
 package dev.klippe.unity.fragment;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,13 +13,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dev.klippe.unity.R;
 import dev.klippe.unity.utils.MaskImage;
-import io.mahendra.calendarview.widget.CalendarView;
 
 /**
  * Created by user on 13.07.2017.
@@ -33,7 +24,7 @@ import io.mahendra.calendarview.widget.CalendarView;
 
 public class SwapScoreFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.swapscore_fragment;
+    private static final int LAYOUT = R.layout.fragment_swapscore;
     protected View view;
     private Context context;
 

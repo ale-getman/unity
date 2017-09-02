@@ -21,7 +21,7 @@ import dev.klippe.unity.entity.EventEntity;
 import dev.klippe.unity.utils.MaskImage;
 
 
-public class AdsFragment extends Fragment  {
+public class AdsFragment extends Fragment {
     private static final int LAYOUT = R.layout.fragment_ads;
     protected View view;
     private Context context;
@@ -38,7 +38,7 @@ public class AdsFragment extends Fragment  {
 
     ArrayList<EventEntity> eventAdap = new ArrayList<EventEntity>();
     EventAdapter boxAdapter;
-    String[] categories =new String[]{"1","2"};
+    String[] categories = new String[]{"1", "2"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -49,7 +49,6 @@ public class AdsFragment extends Fragment  {
         MaskImage mi = new MaskImage(context);
         searchImage.setImageBitmap(mi.getBitmap());
         searchImage.setScaleType(ImageView.ScaleType.FIT_XY);
-
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
@@ -66,7 +65,7 @@ public class AdsFragment extends Fragment  {
 
     void fillData() {
         for (int i = 1; i <= 20; i++) {
-            eventAdap.add(new EventEntity("Product ","sdf","20.10.1195",R.drawable.avatar));
+            eventAdap.add(new EventEntity("Product ", "sdf", "20.10.1195", R.drawable.avatar));
         }
     }
 

@@ -23,7 +23,7 @@ import dev.klippe.unity.R;
 
 public class AddAdFragment extends Fragment {
 
-    private static final int LAYOUT = R.layout.addad_fragment;
+    private static final int LAYOUT = R.layout.fragment_addad;
     protected View view;
     private Context context;
 
