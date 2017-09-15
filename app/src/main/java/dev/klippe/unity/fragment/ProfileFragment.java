@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,6 +101,17 @@ public class ProfileFragment extends Fragment {
         profileEvents.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
         buf = "Баллов<br> использовано<br> <h2><font color='grey'>400</font></h2>";
         profileUsedPoints.setText(Html.fromHtml(buf), TextView.BufferType.SPANNABLE);
+
+        profileAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft;
+                ft = getFragmentManager().beginTransaction();
+                ProfileFragment profileFragment = ProfileFragment.getInstance(context);
+                ft.replace(R.id.main_frame, profileFragment);
+                ft.commit();
+            }
+        });
 
         return view;
     }

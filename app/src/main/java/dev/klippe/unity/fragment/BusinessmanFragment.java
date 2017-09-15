@@ -132,6 +132,17 @@ public class BusinessmanFragment extends Fragment {
             }
         });
 
+        businessAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft;
+                ft = getFragmentManager().beginTransaction();
+                ProfileFragment profileFragment = ProfileFragment.getInstance(context);
+                ft.replace(R.id.main_frame, profileFragment);
+                ft.commit();
+            }
+        });
+
         return view;
     }
 }
