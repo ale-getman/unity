@@ -36,6 +36,8 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         ButterKnife.bind(this);
+        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
+        startActivity(intent);
 
         btnSingIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,14 +52,12 @@ public class AuthActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
-                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<Boolean> call, Throwable t) {
                         Toast.makeText(getApplicationContext(),
-                                "Неверный логин или пароль",
+                                R.string.test_string,
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
