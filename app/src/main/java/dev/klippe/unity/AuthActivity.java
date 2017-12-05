@@ -1,26 +1,27 @@
 package dev.klippe.unity;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dev.klippe.unity.network.Api;
-import dev.klippe.unity.requests.UserLoginRequest;
+import dev.klippe.unity.network.NetworkManager;
+import dev.klippe.unity.network.data.request.UserAuthorizationRequest;
+import dev.klippe.unity.network.data.response.UserAuthorizationResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AuthActivity extends AppCompatActivity {
 
-    private Call<Boolean> call;
+    NetworkManager networkManager;
+    SharedPreferences sPref;
+    final String UNITY_USER = "";
+    public String cookie;
 
     @BindView(R.id.btn_singin)
     Button btnSingIn;
@@ -36,31 +37,30 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         ButterKnife.bind(this);
-        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
-        startActivity(intent);
+
+        networkManager = new NetworkManager();
 
         btnSingIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Api api = new Retrofit.Builder()
-                        .baseUrl(Api.host)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build()
-                        .create(Api.class);
 
-                call = api.auth("json", new UserLoginRequest(edtLogin.getText().toString(), edtPass.getText().toString()));
-                call.enqueue(new Callback<Boolean>() {
+                networkManager.getUnityApi().userAuth("application/json",
+                        "json", new UserAuthorizationRequest(edtLogin.toString(),
+                                edtPass.toString())).enqueue(new Callback<UserAuthorizationResponse>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    public void onResponse(Call<UserAuthorizationResponse> call, Response<UserAuthorizationResponse> response) {
+                        if( response != null && response.body() != null) {
+                            cookie = response.body().getCsrfToken();
+                            saveToPreferences(cookie);
+                        }
                     }
 
                     @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),
-                                R.string.test_string,
-                                Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<UserAuthorizationResponse> call, Throwable t) {
+
                     }
                 });
+
             }
         });
     }
@@ -68,6 +68,14 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        call.cancel();
+
     }
+
+    void saveToPreferences(String text) {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(UNITY_USER, text);
+        ed.commit();
+    }
+
 }
