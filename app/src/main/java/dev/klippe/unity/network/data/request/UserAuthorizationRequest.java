@@ -10,10 +10,8 @@ import com.google.gson.annotations.SerializedName;
 public class UserAuthorizationRequest {
 
     @SerializedName("name")
-    @Expose
     private String name;
     @SerializedName("pass")
-    @Expose
     private String pass;
 
     public String getName() {

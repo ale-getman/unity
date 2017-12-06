@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 public interface UnityApi {
 
     @POST("user/login")
-    Call<UserAuthorizationResponse> userAuth(@Header("Content-Type")  String formatContent,
+    Call<UserAuthorizationResponse> userAuth(@Header("content-type")  String formatContent,
                                              @Query("_format") String format,
                                              @Body UserAuthorizationRequest body);
 }
