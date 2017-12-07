@@ -1,7 +1,9 @@
 package dev.klippe.unity.network;
 
 import dev.klippe.unity.network.data.request.UserAuthorizationRequest;
+import dev.klippe.unity.network.data.request.UserRegistrationRequest;
 import dev.klippe.unity.network.data.response.UserAuthorizationResponse;
+import dev.klippe.unity.network.data.response.UserRegistrationResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Header;
@@ -19,4 +21,10 @@ public interface UnityApi {
     Call<UserAuthorizationResponse> userAuth(@Header("content-type")  String formatContent,
                                              @Query("_format") String format,
                                              @Body UserAuthorizationRequest body);
+
+    @POST("user/register")
+    Call<UserRegistrationResponse> userRegister(@Header("content-type") String formatContent,
+                                                @Query("_format") String format,
+                                                @Body UserRegistrationRequest body);
+
 }

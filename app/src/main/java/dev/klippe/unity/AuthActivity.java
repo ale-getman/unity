@@ -3,14 +3,11 @@ package dev.klippe.unity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +35,9 @@ public class AuthActivity extends AppCompatActivity {
     @BindView(R.id.et_password)
     EditText edtPass;
 
+    @BindView(R.id.btn_singup)
+    EditText btnSihnUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class AuthActivity extends AppCompatActivity {
         if (sPref.contains(nameKey)) {
             String prToken = sPref.getString(nameKey, "");
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("token", prToken);
             startActivity(intent);
         }
 
@@ -69,6 +70,7 @@ public class AuthActivity extends AppCompatActivity {
                             editor.putString(nameKey, token);
                             editor.apply();
                             Intent intent = new Intent(context, MainActivity.class);
+                            intent.putExtra("token", token);
                             startActivity(intent);
                         }
                     }
@@ -78,6 +80,13 @@ public class AuthActivity extends AppCompatActivity {
 
                     }
                 });
+
+            }
+        });
+
+        btnSihnUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
