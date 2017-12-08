@@ -4,6 +4,10 @@ package dev.klippe.unity.network.data.request;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import dev.klippe.unity.network.data.request.Mail;
+import dev.klippe.unity.network.data.request.Name;
+import dev.klippe.unity.network.data.request.Pass;
+
 public class UserRegistrationRequest {
 
     @SerializedName("name")
@@ -40,4 +44,9 @@ public class UserRegistrationRequest {
         this.pass = pass;
     }
 
+    public UserRegistrationRequest(Name name, Mail mail, Pass pass) {
+        this.name = name;
+        this.mail = mail;
+        this.pass = pass;
+    }
 }

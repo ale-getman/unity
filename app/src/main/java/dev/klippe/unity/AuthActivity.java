@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +27,7 @@ public class AuthActivity extends AppCompatActivity {
     public static final String myPrefs = "myprefs";
     public static final String nameKey = "token";
 
-    @BindView(R.id.btn_singin)
+    @BindView(R.id.btn_signin)
     Button btnSingIn;
 
     @BindView(R.id.et_login)
@@ -35,8 +36,8 @@ public class AuthActivity extends AppCompatActivity {
     @BindView(R.id.et_password)
     EditText edtPass;
 
-    @BindView(R.id.btn_singup)
-    EditText btnSihnUp;
+    @BindView(R.id.txt_go_signup)
+    TextView btnGoSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +85,11 @@ public class AuthActivity extends AppCompatActivity {
             }
         });
 
-        btnSihnUp.setOnClickListener(new View.OnClickListener() {
+        btnGoSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, SignUpActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -95,6 +97,5 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
     }
 }

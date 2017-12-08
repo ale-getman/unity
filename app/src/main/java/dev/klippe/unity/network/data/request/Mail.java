@@ -18,4 +18,7 @@ public class Mail {
         this.value = value;
     }
 
+    public Mail(String value) {
+        this.value = value;
+    }
 }

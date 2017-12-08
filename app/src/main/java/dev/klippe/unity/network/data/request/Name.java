@@ -1,4 +1,3 @@
-
 package dev.klippe.unity.network.data.request;
 
 import com.google.gson.annotations.Expose;
@@ -18,4 +17,7 @@ public class Name {
         this.value = value;
     }
 
+    public Name(String value) {
+        this.value = value;
+    }
 }

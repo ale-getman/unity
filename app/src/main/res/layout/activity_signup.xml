@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+    <EditText
+        android:id="@+id/edt_reglogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="175sp"
+        android:hint="Логин"
+        android:textColorHint="@color/white_color"/>
+
+    <EditText
+        android:id="@+id/edt_regmail"
+        android:layout_below="@id/edt_reglogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Электронная почта"
+        android:textColorHint="@color/white_color"/>
+
+    <EditText
+        android:id="@+id/edt_regpass"
+        android:layout_below="@id/edt_regmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Пароль"
+        android:textColorHint="@color/white_color"/>
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_regpass"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/btn_style"
+        android:text="Регистрация"
+        android:textColor="@color/white_color" />
+
+</RelativeLayout>

@@ -18,4 +18,7 @@ public class Pass {
         this.value = value;
     }
 
+    public Pass(String value) {
+        this.value = value;
+    }
 }

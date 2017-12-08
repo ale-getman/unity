@@ -7,7 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="text_password">Пароль</string>
     <string name="text_login">Логин</string>
-    <string name="text_singup">Вы еще не зарегистрированны?</string>
+    <string name="text_singup">Вы еще не зарегистрированы?</string>
     <string name="text_sing_up">Регистрация</string>
     <string name="btn_text_sing_in">Войти в систему</string>
     <string name="text_ballow">БАЛЛОВ</string>
