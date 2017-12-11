@@ -60,6 +60,10 @@
             android:id="@+id/btn_nav_about"
             android:icon="@drawable/nav_about"
             android:title="@string/nav_about" />
+        <item
+            android:id="@+id/btn_logout"
+            android:icon="@drawable/nav_about"
+            android:title="@string/nav_logout" />
     </group>
 
 

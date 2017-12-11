@@ -1,5 +1,8 @@
 package dev.klippe.unity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -24,11 +27,17 @@ import dev.klippe.unity.fragment.QrScanFragment;
 import dev.klippe.unity.fragment.SearchFragment;
 import dev.klippe.unity.fragment.SwapScoreFragment;
 import dev.klippe.unity.fragment.TimetableFragment;
+import dev.klippe.unity.network.NetworkManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public FragmentTransaction ft;
+    NetworkManager networkManager;
+    Context context;
+    SharedPreferences sPref;
+    public static final String myPrefs = "myprefs";
+    public static final String nameKey = "token";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+        networkManager = new NetworkManager();
+        context = getApplicationContext();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -157,6 +168,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_nav_about) {
             Toast.makeText(this, "Не готово", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.btn_logout) {
+            sPref = getSharedPreferences(myPrefs, Context.MODE_PRIVATE);
+            if (sPref.contains(nameKey)) {
+               sPref.edit().remove(nameKey).commit();
+               Intent intent = new Intent(context, AuthActivity.class);
+               startActivity(intent);
+            }
         }
         ft.commit();
 
